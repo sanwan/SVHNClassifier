@@ -96,7 +96,9 @@ def _train(path_to_train_tfrecords_file, num_train_examples, path_to_val_tfrecor
                     best_accuracy = accuracy
                 else:
                     patience -= 1
-
+                
+                if best_accuracy > 0.3:
+                    break
 
                 print '=> patience = %d' % patience
                 if patience == 0:
